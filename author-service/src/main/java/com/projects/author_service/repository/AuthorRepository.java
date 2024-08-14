@@ -1,5 +1,6 @@
 package com.projects.author_service.repository;
 
+import com.projects.author_service.exception.AuthorNotFoundException;
 import com.projects.author_service.model.Author;
 import org.springframework.stereotype.Repository;
 
@@ -35,7 +36,7 @@ public class AuthorRepository {
             return author1.get();
         }
         else {
-            return null;
+            throw new AuthorNotFoundException("Author not available");
         }
     }
 

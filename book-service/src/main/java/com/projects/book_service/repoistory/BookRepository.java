@@ -1,5 +1,6 @@
 package com.projects.book_service.repoistory;
 
+import com.projects.book_service.exception.BookNotFoundException;
 import com.projects.book_service.model.Book;
 import org.springframework.stereotype.Repository;
 
@@ -35,7 +36,7 @@ public class BookRepository {
             return book.get();
         }
         else {
-            return null;
+            throw new BookNotFoundException("book not found");
         }
     }
 
